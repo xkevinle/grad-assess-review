@@ -9,20 +9,20 @@ const router = require('./router.js')
 app.use(express.json())
 //do the url encoding thing
 app.use(express.urlencoded({extended : true}));
-
 //change directory path if needed
 // app.use()
 
 app.use(express.static(path.join(__dirname, '../client')))
 
-// app.get('/', (req, res) => {
-//   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
-// });
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
+});
+app.get('/chatroom', (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, '../client/chatRoom.html'));
+});
 
 //make the routers
-//app.use()
 app.use('/', router)
-
 
 //404 error handler
 app.use('/*', (req, res) =>

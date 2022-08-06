@@ -2,7 +2,7 @@
   "name": "grad-assess-review",
   "version": "1.0.0",
   "description": "",
-  "main": "client/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
